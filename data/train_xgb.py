@@ -10,7 +10,7 @@ from xgboost import XGBRegressor
 # === Konfigurasi ===
 CURRENT_YEAR = 2025
 MIN_MODEL_OCCURRENCE = 3
-FOLDER = "predict/data"
+FOLDER = "data"
 
 # Pastikan folder output tersedia
 os.makedirs(FOLDER, exist_ok=True)
