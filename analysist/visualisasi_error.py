@@ -5,9 +5,9 @@ import seaborn as sns
 from sklearn.metrics import mean_absolute_error, r2_score
 
 # === File Paths ===
-MODEL_FILE = 'LEGOAS/xgb_price_predictor.joblib'
-COLUMNS_FILE = 'LEGOAS/xgb_model_columns.joblib'
-TEST_SET_FILE = 'LEGOAS/xgb_test_set.joblib'
+MODEL_FILE = 'predict/analysist/xgb_price_predictor.joblib'
+COLUMNS_FILE = 'predict/analysist/xgb_model_columns.joblib'
+TEST_SET_FILE = 'predict/analysist/xgb_test_set.joblib'
 
 # === Load model dan data ===
 print("📦 Loading model dan test set...")
