@@ -7,7 +7,7 @@ import os
 from generative_ai_response import ask_openrouter
 from prompt import generate_price_explanation_prompt
 
-# === Konfigurasi ===
+# Konfigurasi
 MODEL_PATH = "data/xgb_price_predictor.joblib"
 COLUMNS_PATH = "data/xgb_model_columns.joblib"
 DATA_PATH =  "data/mobil123_data_updated.csv"
@@ -62,12 +62,12 @@ if st.button("🔍 Estimasi Harga"):
         # One-hot encoding manual
         input_encoded = pd.DataFrame([input_data])
 
-        # Tambahkan kolom dummy yang sesuai dengan model
+        # Kolom dummy
         for col in columns:
             if col not in input_encoded.columns:
                 input_encoded[col] = 0  # default semua kolom kategori = 0
 
-        # Set kolom spesifik menjadi 1 jika cocok
+        # Set kolom
         feature_flags = {
             f"name_{brand}": 1,
             f"model_{model_selected}": 1,
@@ -80,7 +80,7 @@ if st.button("🔍 Estimasi Harga"):
             if col_name in input_encoded.columns:
                 input_encoded[col_name] = val
 
-        # Urutkan kolom agar sama persis
+        # Urutkan kolom
         input_encoded = input_encoded[columns]
 
         # Prediksi
