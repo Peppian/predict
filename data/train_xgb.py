@@ -7,12 +7,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error, r2_score
 from xgboost import XGBRegressor
 
-# === Konfigurasi ===
 CURRENT_YEAR = 2025
 MIN_MODEL_OCCURRENCE = 3
 FOLDER = "data"
 
-# Pastikan folder output tersedia
 os.makedirs(FOLDER, exist_ok=True)
 
 DATA_FILE = os.path.join(FOLDER, 'mobil123_data_updated.csv')
