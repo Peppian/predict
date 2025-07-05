@@ -1,16 +1,17 @@
 import requests
+import streamlit as st
 
 def ask_openrouter(prompt: str) -> str:
+    api_key = st.secrets["openrouter"]["api_key"]
+
     headers = {
-        "Authorization": "Bearer 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",  # ganti ini!
+        "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json"
     }
 
     data = {
-        "model": "google/gemini-2.5-flash-lite-preview-06-17",  # atau model lain
-        "messages": [
-            {"role": "user", "content": prompt}
-        ]
+        "model": "llm_explain_predict",
+        "messages": [{"role": "user", "content": prompt}]
     }
 
     response = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=data)
