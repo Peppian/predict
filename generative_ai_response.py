@@ -7,7 +7,7 @@ def ask_openrouter(prompt: str) -> str:
     }
 
     data = {
-        "model": "mistralai/mistral-7b-instruct",  # atau model lain
+        "model": "google/gemini-2.5-flash-lite-preview-06-17",  # atau model lain
         "messages": [
             {"role": "user", "content": prompt}
         ]
