@@ -6,10 +6,13 @@ import numpy as np
 from generative_ai_response import ask_openrouter
 from prompt import generate_price_explanation_prompt
 
-# === Load model dan metadata ===
-MODEL_PATH = "LEGOAS/xgb_price_predictor.joblib"
-COLUMNS_PATH = "LEGOAS/xgb_model_columns.joblib"
-DATA_PATH = "LEGOAS/mobil123_data_updated.csv"
+# === Konfigurasi ===
+FOLDER = "predict/data"
+os.makedirs(FOLDER, exist_ok=True)
+
+MODEL_PATH = os.path.join(FOLDER, 'xgb_price_predictor.joblib')
+COLUMNS_PATH = os.path.join(FOLDER, 'xgb_model_columns.joblib')
+DATA_PATH =  os.path.join(FOLDER, 'mobil123_data_updated.csv')
 
 model = joblib.load(MODEL_PATH)
 columns = joblib.load(COLUMNS_PATH)
@@ -18,7 +21,7 @@ data = pd.read_csv(DATA_PATH)
 st.set_page_config(page_title="Estimasi Harga Mobil Bekas", page_icon="🚘")
 st.title("🚘 Estimasi Harga Mobil Bekas")
 
-# === INPUT UI ===
+# INPUT UI
 brand_list = sorted(data['name'].dropna().unique())
 brand = st.selectbox("Pilih Merek Mobil", ["-"] + brand_list)
 
@@ -45,7 +48,7 @@ transmission = st.selectbox("Transmisi", ["-", "AT", "MT"])
 year = st.slider("Tahun Produksi", 2000, 2025, 2020)
 mileage = st.number_input("Kilometer", min_value=0, value=0)
 
-# === PREDIKSI HARGA ===
+# PREDIKSI HARGA
 if st.button("🔍 Estimasi Harga"):
     if "-" in [brand, model_selected, region, transmission, fuel_type, body_type, seating_capacity]:
         st.warning("Mohon lengkapi semua input terlebih dahulu.")
@@ -86,7 +89,7 @@ if st.button("🔍 Estimasi Harga"):
         estimated_price = model.predict(input_encoded)[0]
         st.success(f"💰 Estimasi Harga: **Rp {estimated_price:,.0f}**")
 
-        # === GENERATIVE AI ===
+        # GENERATIVE AI
         with st.spinner("🧠 Menyusun penjelasan dari AI..."):
             prompt = generate_price_explanation_prompt(
                 brand=brand,
