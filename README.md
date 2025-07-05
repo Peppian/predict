@@ -1,6 +1,22 @@
 # 🚘 Estimasi Harga Mobil Bekas dengan XGBoost & LLM
 Proyek ini bertujuan membangun sistem prediksi harga mobil bekas di Indonesia menggunakan teknik Machine Learning (XGBoost) yang dikombinasikan dengan model Generatif AI (LLM) untuk memberikan penjelasan prediktif yang lebih natural kepada pengguna.
 
+## Machine Learning Prediktif (XGBoost)
+Model XGBoost digunakan untuk memprediksi angka harga mobil bekas secara kuantitatif. Model ini dilatih menggunakan data historis (merek, tahun, jarak tempuh, dll) dan belajar pola dari data untuk meminimalkan kesalahan prediksi.
+Karakteristik:
+Output berupa angka estimasi harga.
+Berdasarkan statistik dan pola data aktual.
+Akurasi diukur dengan metrik seperti MAE dan R².
+
+## Generative AI (LLM)
+Model LLM (Large Language Model) digunakan untuk menghasilkan penjelasan naratif berdasarkan hasil prediksi. Tujuannya adalah membantu pengguna memahami mengapa harga tersebut masuk akal, dengan bahasa yang lebih manusiawi dan deskriptif.
+Karakteristik:
+Output berupa teks penjelasan.
+Tidak mengambil keputusan harga, hanya memberikan konteks.
+Bersifat probabilistik dan tidak selalu 100% akurat.
+
+Keduanya tidak bertentangan, melainkan saling melengkapi: ML memberikan angka, LLM memberikan narasi.
+
 ---
 
 ## 🔧 Fitur Utama
