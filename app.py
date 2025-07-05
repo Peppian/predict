@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 import numpy as np
+import os
 
 from generative_ai_response import ask_openrouter
 from prompt import generate_price_explanation_prompt
