@@ -41,7 +41,7 @@ Validasi prediksi via crowdsource atau data pasar nyata
 
 ---
 
-##📬 Kontak
+## 📬 Kontak
 Dibuat dengan semangat data dan sedikit idealisme.
 Hubungi saya untuk kolaborasi, pengembangan, atau sekadar berdiskusi tentang AI dan otomotif 🚗✨
 febriandwfzr@gmail.com
