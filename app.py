@@ -8,12 +8,9 @@ from generative_ai_response import ask_openrouter
 from prompt import generate_price_explanation_prompt
 
 # === Konfigurasi ===
-FOLDER = "predict/data"
-os.makedirs(FOLDER, exist_ok=True)
-
-MODEL_PATH = os.path.join(FOLDER, 'xgb_price_predictor.joblib')
-COLUMNS_PATH = os.path.join(FOLDER, 'xgb_model_columns.joblib')
-DATA_PATH =  os.path.join(FOLDER, 'mobil123_data_updated.csv')
+MODEL_PATH = 'predict/data/xgb_price_predictor.joblib'
+COLUMNS_PATH = 'predict/data/xgb_model_columns.joblib'
+DATA_PATH =  'predict/data/mobil123_data_updated.csv'
 
 model = joblib.load(MODEL_PATH)
 columns = joblib.load(COLUMNS_PATH)
