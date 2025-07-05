@@ -25,11 +25,11 @@ R² menunjukkan seberapa baik model menjelaskan variasi data. Semakin mendekati 
 ---
 
 ## 🧠 Tentang Penjelasan LLM
-Model ini juga menggunakan LLM dari OpenRouter (Mistral, Mixtral, dsb) untuk menghasilkan natural explanation setelah prediksi harga.
+Model ini juga menggunakan LLM dari OpenRouter untuk menghasilkan natural explanation setelah prediksi harga.
 Contoh:
 “Harga diperkirakan Rp 178.000.000 karena mobil ini bertransmisi otomatis, keluaran 2020, dan termasuk tipe yang cukup diminati di wilayah Jabodetabek…”
 
-⚠️ Catatan: Respons LLM bersifat generatif dan dapat sesekali memberikan jawaban yang kurang tepat. Gunakan sebagai penjelasan tambahan, bukan dasar utama estimasi.
+⚠️ Catatan: Respons LLM bersifat generatif dan dapat sesekali memberikan jawaban yang kurang tepat. Gunakan sebagai penjelasan tambahan, bukan dasar utama estimasi. Ada kemungkinan error karena akses API terbatas.
 
 ---
 
