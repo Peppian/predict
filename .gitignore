@@ -1,0 +1,22 @@
+# Ignore Streamlit secrets and config
+.streamlit/secrets.toml
+
+# Ignore model files and data
+*.joblib
+*.pkl
+*.csv
+predict/data/
+
+# Ignore virtual environments
+venv/
+env/
+.venv/
+
+# Ignore system files
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Ignore logs or temp
+*.log
+*.tmp
